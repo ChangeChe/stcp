@@ -1,0 +1,11 @@
+{
+    "name": "change3/laravel-s-tcp",
+    "description": "laraver\u001b\u001b[C\u001b[Cer能快速上手swoole的tcp功能",
+    "authors": [
+        {
+            "name": "change",
+            "email": "wannmb@hotmail.com"
+        }
+    ],
+    "require": {}
+}
