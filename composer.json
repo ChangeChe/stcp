@@ -1,11 +1,37 @@
 {
     "name": "change3/laravel-s-tcp",
+    "license": "MIT",
+    "type": "library",
     "description": "laraver\u001b\u001b[C\u001b[Cer能快速上手swoole的tcp功能",
+    "keywords": [
+        "laravel-s-tcp",
+        "swoole",
+        "laravel",
+        "lumen",
+        "tcp",
+        "udp"
+    ],
     "authors": [
         {
             "name": "change",
             "email": "wannmb@hotmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "php": ">=7.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "SwooleC\\TcpS\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "SwooleC\\TcpS\\Illuminate\\TcpSServiceProvider"
+            ]
+        }
+    },
+    "prefer-stable": true,
+    "minimum-stability": "dev"
 }
