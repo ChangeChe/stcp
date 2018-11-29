@@ -1,6 +1,6 @@
 <?php
 
-namespace SwooleC\TcpS\Socket;
+namespace SwooleC\TcpS\Swoole\Socket;
 
 abstract class TcpSocket implements TcpInterface
 {

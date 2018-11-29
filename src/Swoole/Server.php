@@ -9,7 +9,7 @@
 namespace SwooleC\TcpS\Swoole;
 
 
-use SwooleC\TcpS\Socket\TcpInterface;
+use SwooleC\TcpS\Swoole\Socket\TcpInterface;
 use SwooleC\TcpS\Swoole\Traits\LogTrait;
 use SwooleC\TcpS\Swoole\Traits\ProcessTitleTrait;
 class Server

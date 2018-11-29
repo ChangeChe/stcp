@@ -11,6 +11,6 @@ trait LogTrait
 
     public function log($msg, $type = 'INFO')
     {
-        echo sprintf('[%s] [%s] LaravelS: %s', date('Y-m-d H:i:s'), $type, $msg), PHP_EOL;
+        echo sprintf('[%s] [%s] SWOOLE-TCP: %s', date('Y-m-d H:i:s'), $type, $msg), PHP_EOL;
     }
 }
