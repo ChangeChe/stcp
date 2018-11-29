@@ -44,7 +44,7 @@ class Server
         $settings['enable_static_handler'] = !empty($conf['handle_static']);
 
         $serverClass = \swoole_server::class;
-        $this->swoole = new $serverClass($ip, $port, \SWOOLE_PROCESS, $socketType);
+        $this->swoole = new $serverClass($ip, $port, SWOOLE_BASE, $socketType);
 
         $this->swoole->set($settings);
 
@@ -70,7 +70,7 @@ class Server
             $eventHandler('onReceive', func_get_args());
         });
 
-        $this->swoole->on('close', function (\swoole_websocket_server $server, $fd, $reactorId) use ($eventHandler) {
+        $this->swoole->on('close', function (\swoole_server $server, $fd, $reactorId) use ($eventHandler) {
             $eventHandler('onClose', func_get_args());
         });
     }

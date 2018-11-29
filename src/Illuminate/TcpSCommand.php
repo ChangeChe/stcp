@@ -10,6 +10,8 @@ namespace SwooleC\TcpS\Illuminate;
 
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
+use SwooleC\TcpS\Swoole\Server;
+
 class TcpSCommand extends Command
 {
     protected $signature = 'swoole-tcp';
