@@ -24,7 +24,7 @@ class Server
     protected $swoole;
 
 
-    protected function __construct(array $conf)
+    public function __construct(array $conf)
     {
         $this->conf = $conf;
 
