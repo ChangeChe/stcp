@@ -10,7 +10,8 @@ namespace SwooleC\TcpS\Swoole;
 
 
 use SwooleC\TcpS\Socket\TcpInterface;
-
+use SwooleC\TcpS\Swoole\Traits\LogTrait;
+use SwooleC\TcpS\Swoole\Traits\ProcessTitleTrait;
 class Server
 {
     use LogTrait;
@@ -19,7 +20,7 @@ class Server
     protected $conf;
 
     /**
-     * @var \swoole_http_server|\swoole_websocket_server
+     * @var \swoole_server
      */
     protected $swoole;
 
