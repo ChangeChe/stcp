@@ -9,6 +9,7 @@
 namespace SwooleC\TcpS\Swoole;
 
 
+use SwooleC\TcpS\Illuminate\TCPService;
 use SwooleC\TcpS\Swoole\Socket\TcpInterface;
 use SwooleC\TcpS\Swoole\Traits\LogTrait;
 use SwooleC\TcpS\Swoole\Traits\ProcessTitleTrait;
@@ -54,6 +55,7 @@ class Server
 
     protected function bindBaseEvent()
     {
+        $this->swoole->on('WorkerStart', [$this, 'onWorkerStart']);
         $eventHandler = function ($method, array $params) {
             try {
                 call_user_func_array([$this->getSocketHandler(), $method], $params);
@@ -81,8 +83,7 @@ class Server
             return $handler;
         }
 
-        $handlerClass = $this->conf['socket']['handler'];
-        $t = new $handlerClass();
+        $t = new TCPService($this->conf);
         if (!($t instanceof TcpInterface)) {
             throw new \Exception(sprintf('%s must implement the interface %s', get_class($t), TcpInterface::class));
         }

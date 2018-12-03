@@ -5,7 +5,7 @@
  * Date: 2018/11/29
  * Time: 10:26
  */
-use SwooleC\TcpS\Swoole\Server;
+use SwooleC\TcpS\SwooleTCP;
 
 $input = file_get_contents('php://stdin');
 $cfg = json_decode($input, true);
@@ -19,4 +19,4 @@ spl_autoload_register(function ($class) {
     return false;
 });
 
-(new Server($cfg['svrConf']))->run();
+(new SwooleTCP($cfg['svrConf'], $cfg['laravelConf']))->run();

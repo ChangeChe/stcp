@@ -9,7 +9,7 @@
 namespace SwooleC\TcpS\Illuminate;
 
 use ReflectionClass;
-use Log;
+use Illuminate\Support\Facades\Log;
 class IoCService{
     // 获得类的对象实例
     public static function getInstance($className,$params=[]) {

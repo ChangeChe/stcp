@@ -14,9 +14,7 @@ return [
     'server'             => env('LARAVELS_SERVER', 'LaravelS'),
     'handle_static'      => env('LARAVELS_HANDLE_STATIC', false),
     'laravel_base_path'  => env('LARAVEL_BASE_PATH', base_path()),
-    'socket' => [
-        'handler' => ''
-    ],
+    'routes'             => '',
     'events'             => [
     ],
     'swoole_tables'      => [
