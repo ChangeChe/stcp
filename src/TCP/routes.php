@@ -7,7 +7,7 @@
  */
 
 return [
-    'device.data_post'=>'App\TCP\Modules\Device\Service@post',
+    'device.data_post'=>'App\Tcp\Modules\Device\Service@post',
     'tcp.connect'=>'SwooleC\TcpS\TCP\DefaultService@onConnect',
     'tcp.close'=>'SwooleC\TcpS\TCP\DefaultService@onClose',
 ];

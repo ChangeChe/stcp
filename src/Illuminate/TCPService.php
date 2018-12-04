@@ -70,7 +70,7 @@ class TCPService extends TcpSocket
     {
         $data = json_decode($data, true);
         $action = $data['action'];
-        $data = json_decode($data['data']);
+        $data = json_decode($data['data'], true);
         try {
             list($service, $method) = $this->parseAction($action);
             $response = $this->doAction($service, $method, $data);

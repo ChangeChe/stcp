@@ -35,6 +35,7 @@ trait ActionTrait
             if(isset($this->services[$service])) $instance = $this->services[$service];
             else {
                 $instance = IoCService::getInstance($service);
+                if(is_null($instance)) new \Exception(sprintf('%s is not defined', $action));
                 $this->services[$service] = $instance;
             }
             return [$instance, $method];
